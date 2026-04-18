@@ -1,631 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Niva Medical Store | Trusted Healthcare & Wellness</title>
-  <!-- Google Fonts & simple reset -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>নিভা মেডিকেল ষ্টৰ | Trusted Medical Store in Borghuli</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f9fcff;
-      color: #1a2c3e;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f9fc;
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
 
-    /* custom container */
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
+        /* container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-    /* header & navigation */
-    .header {
-      background: white;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(2px);
-    }
+        /* header / navbar */
+        .navbar {
+            background: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+        }
 
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 18px 0;
-    }
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            flex-wrap: wrap;
+        }
 
-    /* Logo area (custom logo design) */
-    .logo-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0b5e7e;
+            letter-spacing: -0.5px;
+        }
 
-    .logo-icon {
-      background: linear-gradient(135deg, #0B5E7E 0%, #1C8B6E 100%);
-      width: 48px;
-      height: 48px;
-      border-radius: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 15px -6px rgba(11, 94, 126, 0.25);
-      transition: transform 0.2s ease;
-    }
+        .logo p {
+            font-size: 0.75rem;
+            color: #2c7a4d;
+            font-weight: 500;
+            margin-top: 4px;
+            letter-spacing: 0.3px;
+        }
 
-    .logo-icon:hover {
-      transform: scale(1.02);
-    }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
 
-    .logo-icon svg {
-      width: 30px;
-      height: 30px;
-      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
-    }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1f4e6e;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
 
-    .logo-text h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      background: linear-gradient(125deg, #0B5E7E, #1C8B6E);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
+        .nav-links a:hover {
+            color: #e67e22;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 4px;
+        }
 
-    .logo-text span {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #4b6b7e;
-      letter-spacing: 0.3px;
-      display: block;
-      margin-top: 2px;
-    }
+        /* mobile menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: #0b5e7e;
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #d9f0f7 0%, #c2e3ed 100%);
+            padding: 60px 0 70px;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 20px;
+        }
 
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 500;
-      color: #1f3b4a;
-      transition: color 0.2s;
-      font-size: 1rem;
-    }
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
 
-    .nav-links a:hover {
-      color: #1C8B6E;
-    }
+        .hero-text {
+            flex: 1;
+        }
 
-    .btn-outline {
-      border: 1.5px solid #1C8B6E;
-      padding: 8px 20px;
-      border-radius: 40px;
-      background: transparent;
-      font-weight: 600;
-      color: #1C8B6E;
-      transition: all 0.2s;
-    }
+        .hero-text .badge {
+            background: #2c7a4d;
+            color: white;
+            font-size: 0.75rem;
+            padding: 6px 14px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
 
-    .btn-outline:hover {
-      background: #1C8B6E;
-      color: white;
-      border-color: #1C8B6E;
-    }
+        .hero-text h2 {
+            font-size: 2.7rem;
+            font-weight: 800;
+            color: #043b52;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
 
-    /* hero */
-    .hero {
-      padding: 70px 0 60px;
-      background: linear-gradient(120deg, #EFF9F5 0%, #ffffff 100%);
-    }
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #1e4a6b;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
 
-    .hero-grid {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 48px;
-    }
+        .cta-btn {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    .hero-content {
-      flex: 1.2;
-    }
+        .cta-btn i {
+            font-size: 1rem;
+        }
 
-    .hero-badge {
-      background: #e0f0ea;
-      display: inline-block;
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #0e6b58;
-      margin-bottom: 20px;
-    }
+        .cta-btn:hover {
+            background: #cf711f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(230,126,34,0.2);
+        }
 
-    .hero-content h2 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: #0a2e3f;
-      margin-bottom: 20px;
-    }
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
 
-    .hero-content p {
-      font-size: 1.1rem;
-      color: #2c4b5e;
-      max-width: 90%;
-      margin-bottom: 32px;
-    }
+        .hero-image img {
+            max-width: 100%;
+            width: 320px;
+            filter: drop-shadow(0 12px 18px rgba(0,0,0,0.1));
+        }
 
-    .btn-primary {
-      background: linear-gradient(100deg, #0B5E7E, #1C8B6E);
-      border: none;
-      padding: 14px 32px;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 1rem;
-      color: white;
-      cursor: pointer;
-      box-shadow: 0 6px 14px rgba(11, 94, 126, 0.25);
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: inline-block;
-      text-decoration: none;
-    }
+        /* Section styles */
+        section {
+            padding: 70px 0 60px;
+        }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 20px rgba(11, 94, 126, 0.3);
-    }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #043b52;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
 
-    .hero-image {
-      flex: 1;
-      background: radial-gradient(circle at 30% 20%, rgba(28,139,110,0.08), transparent);
-      border-radius: 48px;
-      text-align: center;
-    }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: #e67e22;
+            border-radius: 4px;
+        }
 
-    .hero-image svg {
-      max-width: 100%;
-      height: auto;
-    }
+        /* About card */
+        .about-card {
+            background: white;
+            border-radius: 28px;
+            padding: 32px 36px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+            transition: 0.2s;
+            border: 1px solid rgba(11,94,126,0.1);
+        }
 
-    /* features section */
-    .features {
-      padding: 80px 0;
-      background: white;
-    }
+        .about-highlight {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+            align-items: center;
+        }
 
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: #0a2e3f;
-    }
+        .about-text {
+            flex: 2;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #2c3e4e;
+        }
 
-    .section-sub {
-      text-align: center;
-      max-width: 620px;
-      margin: 0 auto 56px;
-      color: #547183;
-    }
+        .about-text i {
+            color: #e67e22;
+            margin-right: 8px;
+        }
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      justify-content: center;
-    }
+        .service-24 {
+            background: #eef2f5;
+            border-radius: 24px;
+            padding: 20px 24px;
+            flex: 1;
+            text-align: center;
+        }
 
-    .card {
-      background: #ffffff;
-      border-radius: 32px;
-      padding: 28px 24px;
-      flex: 1 1 260px;
-      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.05);
-      transition: all 0.25s;
-      border: 1px solid #eef3f0;
-    }
+        .service-24 i {
+            font-size: 2.5rem;
+            color: #2c7a4d;
+            margin-bottom: 12px;
+        }
 
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: #cfe6df;
-      box-shadow: 0 20px 30px -12px rgba(28, 139, 110, 0.12);
-    }
+        .service-24 h4 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #1f4e6e;
+        }
 
-    .card-icon {
-      background: #e7f3ef;
-      width: 56px;
-      height: 56px;
-      border-radius: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-    }
+        /* contact section */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+        }
 
-    .card h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
+        .contact-info {
+            flex: 1;
+        }
 
-    .card p {
-      color: #4a6172;
-      line-height: 1.45;
-    }
+        .contact-detail {
+            margin: 28px 0;
+        }
 
-    /* products preview */
-    .products {
-      background: #F6FBF9;
-      padding: 80px 0;
-    }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 28px;
+            background: #f9fafc;
+            padding: 14px 18px;
+            border-radius: 60px;
+            transition: 0.2s;
+        }
 
-    .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-      margin-top: 20px;
-    }
+        .contact-item i {
+            width: 42px;
+            height: 42px;
+            background: #e67e22;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
 
-    .product-item {
-      background: white;
-      border-radius: 28px;
-      padding: 24px;
-      text-align: center;
-      width: 220px;
-      transition: 0.2s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-      border: 1px solid #e2ebe6;
-    }
+        .contact-item div strong {
+            font-size: 1rem;
+            color: #0b5e7e;
+            display: block;
+        }
 
-    .product-item:hover {
-      box-shadow: 0 20px 28px -14px rgba(0, 0, 0, 0.08);
-    }
+        .contact-item div span, .contact-item div a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-    .product-img {
-      background: #eef5f1;
-      border-radius: 40px;
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        .contact-item div a:hover {
+            color: #e67e22;
+        }
 
-    .product-item h4 {
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
+        .location-map {
+            flex: 1;
+            background: #eef2fa;
+            border-radius: 28px;
+            overflow: hidden;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #cbdde9;
+        }
 
-    .price {
-      font-weight: 700;
-      color: #1C8B6E;
-      margin: 10px 0;
-    }
+        .location-map i {
+            font-size: 4rem;
+            color: #e67e22;
+            margin-bottom: 20px;
+        }
 
-    .tag {
-      background: #eef2f0;
-      padding: 4px 12px;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      font-weight: 500;
-      display: inline-block;
-    }
+        .map-placeholder {
+            background: #d4e3ed;
+            padding: 16px 20px;
+            border-radius: 60px;
+            font-weight: 600;
+            margin-top: 16px;
+        }
 
-    /* about & contact */
-    .contact-section {
-      padding: 70px 0;
-      background: white;
-    }
+        /* footer */
+        .footer {
+            background: #043b52;
+            color: #eef5f9;
+            padding: 32px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
 
-    .contact-flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 48px;
-      align-items: center;
-    }
+        .footer p {
+            opacity: 0.85;
+            font-size: 0.9rem;
+        }
 
-    .contact-info {
-      flex: 1;
-    }
+        /* responsive */
+        @media (max-width: 850px) {
+            .nav-flex {
+                flex-direction: row;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background: white;
+                padding: 20px 0;
+                margin-top: 12px;
+                border-radius: 20px;
+                gap: 18px;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .contact-wrapper {
+                padding: 24px;
+            }
+            .about-card {
+                padding: 24px;
+            }
+        }
 
-    .contact-info h3 {
-      font-size: 1.8rem;
-      margin-bottom: 18px;
-    }
+        @media (max-width: 600px) {
+            .hero-text h2 {
+                font-size: 1.7rem;
+            }
+            .container {
+                padding: 0 18px;
+            }
+            .contact-item {
+                padding: 10px 14px;
+            }
+        }
 
-    .contact-detail {
-      margin-top: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .contact-detail div {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .contact-map {
-      flex: 1;
-      background: #eef2ef;
-      border-radius: 32px;
-      padding: 32px;
-      text-align: center;
-    }
-
-    footer {
-      background: #0a2e3f;
-      color: #ccdfe8;
-      padding: 48px 0 28px;
-    }
-
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 32px;
-      margin-bottom: 32px;
-    }
-
-    .footer-col p {
-      max-width: 260px;
-      margin-top: 12px;
-      font-size: 0.85rem;
-    }
-
-    .footer-col h4 {
-      color: white;
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-
-    .footer-col a {
-      color: #cbdbe2;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-      font-size: 0.85rem;
-    }
-
-    .copyright {
-      text-align: center;
-      padding-top: 24px;
-      border-top: 1px solid #1f4b5e;
-      font-size: 0.75rem;
-    }
-
-    @media (max-width: 780px) {
-      .hero-content h2 {
-        font-size: 2.4rem;
-      }
-      .nav-container {
-        flex-direction: column;
-        gap: 16px;
-      }
-      .container {
-        padding: 0 24px;
-      }
-    }
-  </style>
+        button, a {
+            transition: all 0.2s;
+        }
+        .emergency-tag {
+            background: #fef2e8;
+            border-left: 6px solid #e67e22;
+        }
+    </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="container nav-container">
-    <div class="logo-wrapper">
-      <!-- CUSTOM LOGO: modern medical cross + leaf integrated -->
-      <div class="logo-icon" aria-label="Niva Medical Store Logo">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="32" height="32" rx="16" fill="url(#gradLogo)" />
-          <path d="M16 8V24M10 14H22M10 18H22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M22 10L28 14L22 18" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.8"/>
-          <path d="M10 10L4 14L10 18" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.8"/>
-          <defs>
-            <linearGradient id="gradLogo" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#0B5E7E"/>
-              <stop offset="1" stop-color="#1C8B6E"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      <div class="logo-text">
-        <h1>NIVA</h1>
-        <span>medical store · wellness hub</span>
-      </div>
+<header class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">
+            <h1>নিভা মেডিকেল ষ্টৰ</h1>
+            <p><i class="fas fa-syringe"></i> Trust & Care since 2010</p>
+        </div>
+        <div class="menu-toggle" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#location">Location</a></li>
+        </ul>
     </div>
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">Products</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
-      <a href="#" class="btn-outline">Prescription →</a>
-    </div>
-  </div>
 </header>
 
 <main>
-  <!-- Hero section -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge">✨ Trusted since 2018</div>
-        <h2>Your health, <br>our priority — <span style="color:#1C8B6E;">Niva Care</span></h2>
-        <p>Authentic medicines, advanced wellness products, and personalized care — delivered with compassion. 24/7 pharmacist support.</p>
-        <a href="#" class="btn-primary">Shop now →</a>
-      </div>
-      <div class="hero-image">
-        <svg width="380" height="320" viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M120 160 L160 120 L200 160 L240 120 L280 160 L320 200 L280 240 L240 200 L200 240 L160 200 L120 240 L80 200 L120 160Z" fill="#DCF2EA" stroke="#1C8B6E" stroke-width="2" stroke-linejoin="round" fill-opacity="0.5"/>
-          <circle cx="200" cy="180" r="48" fill="#0B5E7E" fill-opacity="0.08" stroke="#1C8B6E" stroke-width="1.5" stroke-dasharray="4 4"/>
-          <path d="M170 180H230M200 150V210" stroke="#1C8B6E" stroke-width="2.5" stroke-linecap="round"/>
-          <rect x="300" y="260" width="40" height="50" rx="8" fill="#EAF9F2" stroke="#0B5E7E" stroke-width="1.5" />
-          <path d="M310 280H330M310 290H330" stroke="#0B5E7E" stroke-width="1.8" stroke-linecap="round"/>
-          <path d="M60 280L80 260L100 280L80 300L60 280Z" fill="#B7E0D2" stroke="#1C8B6E" stroke-width="1.5"/>
-        </svg>
-      </div>
-    </div>
-  </section>
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="badge"><i class="fas fa-clock"></i> 24×7 Open</span>
+                <h2>আপোনাৰ স্বাস্থ্য, <br>আমাৰ দায়িত্ব</h2>
+                <p>বৰঘুলিৰ বিশ্বস্ত মেডিকেল ষ্টৰ — নিভা মেডিকেলত পাব সকলো ধৰণৰ ঔষধ আৰু পৰামৰ্শ।</p>
+                <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fas fa-phone-alt"></i> যোগাযোগ কৰক
+                </button>
+            </div>
+            <div class="hero-image">
+                <!-- medical / pharmacy illustration (SVG) -->
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath fill='%230b5e7e' d='M100 20L120 60H80L100 20Z'/%3E%3Crect x='85' y='60' width='30' height='80' fill='%23e67e22'/%3E%3Crect x='70' y='90' width='60' height='20' fill='%23ffffff'/%3E%3Ccircle cx='100' cy='145' r='20' fill='%232c7a4d'/%3E%3Ctext x='90' y='152' font-size='16' fill='white' font-weight='bold'%3E24%3C/text%3E%3Ctext x='108' y='152' font-size='10' fill='white'%3E7%3C/text%3E%3C/svg%3E" alt="Medical Store Illustration">
+            </div>
+        </div>
+    </section>
 
-  <!-- Features / why choose us -->
-  <section class="features">
-    <div class="container">
-      <h2 class="section-title">Why Niva Medical Store?</h2>
-      <p class="section-sub">Experience quality healthcare with convenience and trust — all under one roof.</p>
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B5E7E" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <h3>Genuine Products</h3>
-          <p>100% authentic medicines & healthcare essentials, sourced directly from licensed manufacturers.</p>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">আমাৰ বিষয়ে</div>
+            <div class="about-card">
+                <div class="about-highlight">
+                    <div class="about-text">
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>অসমৰ বৰঘুলিৰ সু পৰিচিত মেডিকেল কেন্দ্ৰ</strong> — নিভা মেডিকেল ষ্টৰ সদায় আপোনাৰ সেৱাত। আমি গুণগত মানৰ ঔষধ, চিকিৎসা সামগ্ৰী আৰু জৰুৰীকালীন সহায়তা আগবঢ়াওঁ।</p>
+                        <p style="margin-top: 18px;"><i class="fas fa-user-md"></i> <strong>নাৱাজ ৰছুল</strong> আৰু তেওঁৰ অভিজ্ঞ টীমে 24×7 ঘন্টা সেৱা আগবঢ়াই, ৰাতি也好, দেওবাৰেও।</p>
+                        <p style="margin-top: 12px;"><i class="fas fa-hand-holding-heart"></i> স্বাস্থ্যই সকলোতকৈ ডাঙৰ সম্পদ — আমি সেয়া নিশ্চিত কৰিবলৈ প্ৰতিশ্ৰুতিবদ্ধ।</p>
+                    </div>
+                    <div class="service-24">
+                        <i class="fas fa-clock"></i>
+                        <h4>২৪×৭ চেবা</h4>
+                        <p>দিনে-ৰাতি, জৰুৰীকালীন সময়তো মুকলি</p>
+                        <small><i class="fas fa-check-circle"></i> সম্পূৰ্ণ ঔষধৰ মজুদ</small>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B5E7E" stroke-width="1.6"><path d="M12 6v6l4 2M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
-          </div>
-          <h3>Same-Day Delivery</h3>
-          <p>Fast & contactless delivery across the city. Order before 2pm for same-day dispatch.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B5E7E" stroke-width="1.6"><path d="M20 12v8H4v-8M12 2v8m0 0-3-3m3 3 3-3"/><path d="M5 12h14"/></svg>
-          </div>
-          <h3>Free Health Check</h3>
-          <p>Free BP & sugar monitoring at our store. Preventive care made easy.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B5E7E" stroke-width="1.6"><path d="M12 8v8m-4-4h8M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/></svg>
-          </div>
-          <h3>Expert Pharmacists</h3>
-          <p>Certified professionals to guide your medication & wellness journey.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- products showcase -->
-  <section class="products">
-    <div class="container">
-      <h2 class="section-title">Essentials & Wellness</h2>
-      <p class="section-sub">Curated selection of trusted brands and daily health must-haves.</p>
-      <div class="product-grid">
-        <div class="product-item">
-          <div class="product-img"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0B5E7E" stroke-width="1.5"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 12h6"/><path d="M12 9v6"/></svg></div>
-          <h4>Vitamins B12+</h4>
-          <p class="price">$14.90</p>
-          <span class="tag">Energy support</span>
+    <!-- Contact & Location combined elegant -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">যোগাযোগ & ঠিকনা</div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3 style="color: #043b52; margin-bottom: 12px;"><i class="fas fa-headset"></i> আমালৈ চমুৱক</h3>
+                    <div class="contact-detail">
+                        <div class="contact-item">
+                            <i class="fas fa-user-circle"></i>
+                            <div><strong>পৰিচালক</strong><span>নাৱাজ ৰছুল</span></div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div><strong>ফোন নম্বৰ</strong><a href="tel:+919954172699">+91 99541 72699</a></div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-pin"></i>
+                            <div><strong>ঠিকনা</strong><span>বৰঘুলি, অসম - 785001 (প্ৰধান বজাৰৰ সমীপত)</span></div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div><strong>ইমেইল</strong><span>nivamedical@healthassam.com</span></div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 12px; background: #eef2fa; border-radius: 28px; padding: 16px; text-align: center;">
+                        <i class="fas fa-truck-medical"></i> হোম ডেলিভাৰী উপলব্ধ (বৰঘুলি অঞ্চলত)
+                    </div>
+                </div>
+                <div id="location" class="location-map">
+                    <i class="fas fa-location-dot"></i>
+                    <h3 style="color:#043b52;">আমাৰ অৱস্থান</h3>
+                    <p><strong>বৰঘুলি</strong>, অসমৰ হৃদয়স্থলত, সহজে পাব পৰা স্থান।</p>
+                    <div class="map-placeholder">
+                        <i class="fas fa-store"></i> নিভা মেডিকেল ষ্টৰ, বৰঘুলি মেইন ৰোড
+                    </div>
+                    <div style="margin-top: 18px; font-size: 0.85rem;">
+                        <i class="fas fa-route"></i> ২৪×৭ খোলা থাকে, ৰাতি জৰুৰীকালীন সেৱা
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="product-item">
-          <div class="product-img"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1C8B6E" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg></div>
-          <h4>Glucose Monitor</h4>
-          <p class="price">$29.90</p>
-          <span class="tag">Kit + strips</span>
-        </div>
-        <div class="product-item">
-          <div class="product-img"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0B5E7E" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2 2"/></svg></div>
-          <h4>Herbal Immunity</h4>
-          <p class="price">$19.50</p>
-          <span class="tag">Ayurveda blend</span>
-        </div>
-        <div class="product-item">
-          <div class="product-img"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1C8B6E" stroke-width="1.5"><path d="M3 9h18v10H3zM9 9V5h6v4"/></svg></div>
-          <h4>Face Mask (N95)</h4>
-          <p class="price">gma</p>
-          <span class="tag">Pack of 10</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- contact & location -->
-  <section class="contact-section">
-    <div class="container contact-flex">
-      <div class="contact-info">
-        <h3>📞 Need assistance? <br>We're here 24/7</h3>
-        <p>Talk to our pharmacists, refill your prescription, or schedule a free consultation at our store.</p>
-        <div class="contact-detail">
-          <dkaurbah barghuli, niz kaurbaha</div>
-          <div>📞 7002336938  |  ✉️ lutfurrahman445@gmail.com</div>
-          <div>⏰ Mon–Sat: 8:00 AM – 9:00 PM | Sun: 10 AM – 6 PM</div>
+    <!-- extra service highlight with call to action -->
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div style="background: linear-gradient(110deg, #e8f3f7 0%, #ffffff 100%); border-radius: 28px; padding: 32px 28px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
+                <div>
+                    <h3 style="font-size: 1.5rem; color:#043b52;"><i class="fas fa-stethoscope"></i> জৰুৰীকালীন চিকিৎসা সহায়তা</h3>
+                    <p>ৰাতি যিকোনো সময়ত কল কৰক — আমাৰ দল সাজু। প্ৰয়োজনীয় ঔষধ আৰু প্ৰাথমিক চিকিৎসা সামগ্ৰী উপলব্ধ।</p>
+                </div>
+                <a href="tel:+919954172699" style="background:#e67e22; color:white; padding: 12px 32px; border-radius: 50px; text-decoration: none; font-weight: bold; white-space: nowrap;"><i class="fas fa-phone-volume"></i> এতিয়াই কল কৰক</a>
+            </div>
         </div>
-        <a href="#" class="btn-primary" style="margin-top: 28px; display: inline-block;">Book a consultation →</a>
-      </div>
-      <div class="contact-map">
-        <svg width="280" height="180" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="340" height="200" rx="24" fill="#E2F0EA" />
-          <path d="M50 100 L100 70 L150 100 L200 80 L250 110 L290 85" stroke="#0B5E7E" stroke-width="2.5" stroke-dasharray="3 3" />
-          <circle cx="100" cy="70" r="6" fill="#1C8B6E" stroke="white" stroke-width="2" />
-          <circle cx="200" cy="80" r="6" fill="#1C8B6E" stroke="white" stroke-width="2" />
-          <circle cx="150" cy="100" r="8" fill="#0B5E7E" stroke="white" stroke-width="2.5" />
-          <text x="125" y="132" font-size="9" fill="#0B5E7E" font-weight="bold">Niva Medical</text>
-          <rect x="250" y="100" width="60" height="40" rx="8" fill="white" stroke="#1C8B6E" stroke-width="1.5" />
-          <text x="264" y="124" font-size="8" fill="#0a2e3f">📍 main store</text>
-        </svg>
-        <p style="margin-top: 14px; font-size: 0.8rem;">📍 We’re located in the heart of the city — visit us!</p>
-      </div>
-    </div>
-  </section>
+    </section>
 </main>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-          <div class="logo-icon" style="width: 40px; height: 40px; background: #1f5e6e;">
-            <svg viewBox="0 0 32 32" fill="none" width="24" height="24"><path d="M16 8V24M10 14H22M10 18H22" stroke="white" stroke-width="2"/></svg>
-          </div>
-          <span style="font-weight: 700; font-size: 1.4rem; color: white;">NIVA</span>
-        </div>
-        <p>Compassionate care, premium quality. Your trusted partner for a healthier tomorrow.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Quick links</h4>
-        <a href="#">About Niva</a>
-        <a href="#">Shop all</a>
-        <a href="#">Offers & Refills</a>
-        <a href="#">Health blog</a>
-      </div>
-      <div class="footer-col">
-        <h4>Support</h4>
-        <a href="#">FAQs</a>
-        <a href="#">Shipping & Returns</a>
-        <a href="#">Privacy policy</a>
-        <a href="#">Contact support</a>
-      </div>
-      <div class="footer-col">
-        <h4>Follow us</h4>
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-      </div>
+<footer class="footer">
+    <div class="container">
+        <p><i class="fas fa-copyright"></i> 2025 নিভা মেডিকেল ষ্টৰ — বৰঘুলি, অসম | 24×7 সেৱা | বিশ্বাসৰ নামত</p>
+        <p style="margin-top: 12px; font-size: 0.8rem;"><i class="fas fa-phone"></i> 9954172699 | <i class="fas fa-map-marker-alt"></i> Borghuli, Nawaz Rasul (পৰিচালক)</p>
     </div>
-    <div class="copyright">
-      © 2026 Niva Medical Store — Advancing wellness with integrity. All rights reserved.
-    </div>
-  </div>
 </footer>
+
+<!-- simple mobile menu toggler -->
+<script>
+    (function() {
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        if(menuBtn && navLinks) {
+            menuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+            });
+            // close menu when click on a link (better ux)
+            const allLinks = navLinks.querySelectorAll('a');
+            allLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+
+        // smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === "#" || targetId === "") return;
+                const targetElem = document.querySelector(targetId);
+                if(targetElem) {
+                    e.preventDefault();
+                    targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // update url without jump
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+    })();
+</script>
 </body>
 </html>
