@@ -1,783 +1,631 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Niva Medical Store | स्वास्थ्य सेवा आपके द्वार</title>
-    <!-- Google Fonts & Font Awesome for Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Niva Medical Store | Trusted Healthcare & Wellness</title>
+  <!-- Google Fonts & simple reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #f4f9fe;
-            color: #1a2c3e;
-            line-height: 1.5;
-            scroll-behavior: smooth;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fcff;
+      color: #1a2c3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
 
-        /* container utility */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+    /* custom container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
 
-        /* buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.25s ease;
-            cursor: pointer;
-            border: none;
-            background: none;
-            text-decoration: none;
-        }
+    /* header & navigation */
+    .header {
+      background: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+    }
 
-        .btn-primary {
-            background: #0b7b5e;
-            color: white;
-            box-shadow: 0 6px 14px rgba(11, 123, 94, 0.25);
-        }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 18px 0;
+    }
 
-        .btn-primary:hover {
-            background: #096b51;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 20px rgba(11, 123, 94, 0.3);
-        }
+    /* Logo area (custom logo design) */
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .btn-outline {
-            border: 2px solid #0b7b5e;
-            color: #0b7b5e;
-            background: white;
-        }
+    .logo-icon {
+      background: linear-gradient(135deg, #0B5E7E 0%, #1C8B6E 100%);
+      width: 48px;
+      height: 48px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 15px -6px rgba(11, 94, 126, 0.25);
+      transition: transform 0.2s ease;
+    }
 
-        .btn-outline:hover {
-            background: #eef7f3;
-            transform: translateY(-2px);
-        }
+    .logo-icon:hover {
+      transform: scale(1.02);
+    }
 
-        /* header / navbar */
-        .navbar {
-            background: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(0px);
-        }
+    .logo-icon svg {
+      width: 30px;
+      height: 30px;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+    }
 
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 16px 24px;
-        }
+    .logo-text h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(125deg, #0B5E7E, #1C8B6E);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
 
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #0b7b5e;
-            letter-spacing: -0.5px;
-        }
+    .logo-text span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #4b6b7e;
+      letter-spacing: 0.3px;
+      display: block;
+      margin-top: 2px;
+    }
 
-        .logo span {
-            font-weight: 400;
-            color: #2c5a6e;
-            font-size: 0.9rem;
-        }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-            list-style: none;
-        }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1f3b4a;
+      transition: color 0.2s;
+      font-size: 1rem;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 500;
-            color: #2c3e44;
-            transition: 0.2s;
-        }
+    .nav-links a:hover {
+      color: #1C8B6E;
+    }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: #0b7b5e;
-        }
+    .btn-outline {
+      border: 1.5px solid #1C8B6E;
+      padding: 8px 20px;
+      border-radius: 40px;
+      background: transparent;
+      font-weight: 600;
+      color: #1C8B6E;
+      transition: all 0.2s;
+    }
 
-        .mobile-menu {
-            display: none;
-            font-size: 1.7rem;
-            cursor: pointer;
-            color: #0b7b5e;
-        }
+    .btn-outline:hover {
+      background: #1C8B6E;
+      color: white;
+      border-color: #1C8B6E;
+    }
 
-        /* hero section */
-        .hero {
-            background: linear-gradient(135deg, #e1f5f0 0%, #ffffff 100%);
-            padding: 60px 0 70px;
-        }
+    /* hero */
+    .hero {
+      padding: 70px 0 60px;
+      background: linear-gradient(120deg, #EFF9F5 0%, #ffffff 100%);
+    }
 
-        .hero-grid {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-        }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 48px;
+    }
 
-        .hero-content {
-            flex: 1.2;
-        }
+    .hero-content {
+      flex: 1.2;
+    }
 
-        .hero-badge {
-            background: #d1f0e8;
-            color: #0b7b5e;
-            padding: 6px 14px;
-            border-radius: 60px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
+    .hero-badge {
+      background: #e0f0ea;
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #0e6b58;
+      margin-bottom: 20px;
+    }
 
-        .hero-content h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: #1a2c3e;
-        }
+    .hero-content h2 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #0a2e3f;
+      margin-bottom: 20px;
+    }
 
-        .hero-content p {
-            font-size: 1.1rem;
-            color: #3a5a6e;
-            margin-bottom: 32px;
-            max-width: 90%;
-        }
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #2c4b5e;
+      max-width: 90%;
+      margin-bottom: 32px;
+    }
 
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
+    .btn-primary {
+      background: linear-gradient(100deg, #0B5E7E, #1C8B6E);
+      border: none;
+      padding: 14px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(11, 94, 126, 0.25);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-block;
+      text-decoration: none;
+    }
 
-        .hero-image {
-            flex: 1;
-            text-align: center;
-        }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px rgba(11, 94, 126, 0.3);
+    }
 
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 32px;
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
-        }
+    .hero-image {
+      flex: 1;
+      background: radial-gradient(circle at 30% 20%, rgba(28,139,110,0.08), transparent);
+      border-radius: 48px;
+      text-align: center;
+    }
 
-        /* featured categories */
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 48px;
-            color: #1a2c3e;
-        }
+    .hero-image svg {
+      max-width: 100%;
+      height: auto;
+    }
 
-        .section-sub {
-            text-align: center;
-            color: #5a7a8a;
-            margin-top: -30px;
-            margin-bottom: 48px;
-        }
+    /* features section */
+    .features {
+      padding: 80px 0;
+      background: white;
+    }
 
-        .categories {
-            padding: 70px 0;
-        }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #0a2e3f;
+    }
 
-        .cat-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
+    .section-sub {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 56px;
+      color: #547183;
+    }
 
-        .cat-card {
-            background: white;
-            border-radius: 28px;
-            padding: 28px 20px;
-            text-align: center;
-            width: 180px;
-            transition: all 0.3s;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-            border: 1px solid #e2f0ec;
-        }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
 
-        .cat-card i {
-            font-size: 2.8rem;
-            color: #0b7b5e;
-            margin-bottom: 16px;
-        }
+    .card {
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 28px 24px;
+      flex: 1 1 260px;
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.05);
+      transition: all 0.25s;
+      border: 1px solid #eef3f0;
+    }
 
-        .cat-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 6px;
-        }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #cfe6df;
+      box-shadow: 0 20px 30px -12px rgba(28, 139, 110, 0.12);
+    }
 
-        .cat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -12px rgba(11,123,94,0.15);
-            border-color: #c0e3d9;
-        }
+    .card-icon {
+      background: #e7f3ef;
+      width: 56px;
+      height: 56px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
 
-        /* featured products */
-        .products {
-            background: white;
-            padding: 70px 0;
-        }
+    .card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
 
-        .product-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 28px;
-            justify-content: center;
-        }
+    .card p {
+      color: #4a6172;
+      line-height: 1.45;
+    }
 
-        .product-card {
-            background: #ffffff;
-            border-radius: 28px;
-            overflow: hidden;
-            width: 260px;
-            transition: all 0.25s;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-            border: 1px solid #eef3f0;
-            padding: 20px 16px 24px;
-            text-align: center;
-        }
+    /* products preview */
+    .products {
+      background: #F6FBF9;
+      padding: 80px 0;
+    }
 
-        .product-card:hover {
-            box-shadow: 0 24px 36px -16px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
-        }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 20px;
+    }
 
-        .product-img {
-            background: #ecf9f4;
-            border-radius: 60px;
-            width: 100px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
+    .product-item {
+      background: white;
+      border-radius: 28px;
+      padding: 24px;
+      text-align: center;
+      width: 220px;
+      transition: 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid #e2ebe6;
+    }
 
-        .product-img i {
-            font-size: 3.2rem;
-            color: #0b7b5e;
-        }
+    .product-item:hover {
+      box-shadow: 0 20px 28px -14px rgba(0, 0, 0, 0.08);
+    }
 
-        .product-card h4 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
+    .product-img {
+      background: #eef5f1;
+      border-radius: 40px;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .price {
-            font-weight: 700;
-            color: #0b7b5e;
-            font-size: 1.3rem;
-            margin: 12px 0;
-        }
+    .product-item h4 {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
 
-        .old-price {
-            text-decoration: line-through;
-            font-size: 0.85rem;
-            color: #8ba0aa;
-            margin-left: 8px;
-        }
+    .price {
+      font-weight: 700;
+      color: #1C8B6E;
+      margin: 10px 0;
+    }
 
-        .product-card button {
-            background: #0b7b5e;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-            width: 100%;
-        }
+    .tag {
+      background: #eef2f0;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      display: inline-block;
+    }
 
-        .product-card button:hover {
-            background: #065a46;
-        }
+    /* about & contact */
+    .contact-section {
+      padding: 70px 0;
+      background: white;
+    }
 
-        /* services / offers */
-        .offers {
-            background: linear-gradient(120deg, #eef7f2, #ffffff);
-            padding: 70px 0;
-        }
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+    }
 
-        .offer-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
+    .contact-info {
+      flex: 1;
+    }
 
-        .offer-item {
-            background: white;
-            border-radius: 32px;
-            padding: 30px 20px;
-            text-align: center;
-            flex: 1;
-            min-width: 200px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-            border: 1px solid #cee4dc;
-        }
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 18px;
+    }
 
-        .offer-item i {
-            font-size: 2.5rem;
-            color: #0b7b5e;
-            margin-bottom: 18px;
-        }
+    .contact-detail {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
 
-        /* contact & footer */
-        .contact {
-            padding: 70px 0 50px;
-        }
+    .contact-detail div {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-        .contact-container {
-            background: #1f3e3a;
-            border-radius: 48px;
-            padding: 50px 40px;
-            color: white;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 30px;
-        }
+    .contact-map {
+      flex: 1;
+      background: #eef2ef;
+      border-radius: 32px;
+      padding: 32px;
+      text-align: center;
+    }
 
-        .contact-text h3 {
-            font-size: 1.9rem;
-            margin-bottom: 12px;
-        }
+    footer {
+      background: #0a2e3f;
+      color: #ccdfe8;
+      padding: 48px 0 28px;
+    }
 
-        .contact-text p {
-            opacity: 0.85;
-        }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
 
-        .contact-form {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
+    .footer-col p {
+      max-width: 260px;
+      margin-top: 12px;
+      font-size: 0.85rem;
+    }
 
-        .contact-form input {
-            padding: 14px 20px;
-            border-radius: 60px;
-            border: none;
-            width: 260px;
-            font-size: 1rem;
-        }
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
 
-        .footer {
-            background: #0d2b27;
-            color: #cde3dd;
-            padding: 40px 0 30px;
-            text-align: center;
-        }
+    .footer-col a {
+      color: #cbdbe2;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+    }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-        }
+    .copyright {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid #1f4b5e;
+      font-size: 0.75rem;
+    }
 
-        .footer-links a {
-            color: #cde3dd;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .social i {
-            font-size: 1.4rem;
-            margin: 0 10px;
-            transition: 0.2s;
-            color: #bcd9d1;
-        }
-
-        .social i:hover {
-            color: white;
-            transform: scale(1.1);
-        }
-
-        /* responsive */
-        @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-            }
-            .mobile-menu {
-                display: block;
-            }
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            .hero-content p {
-                max-width: 100%;
-            }
-            .container {
-                padding: 0 20px;
-            }
-            .contact-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .contact-form {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero-buttons .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            .section-title {
-                font-size: 1.7rem;
-            }
-        }
-
-        /* toast message */
-        .toast-msg {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1f2e2a;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-weight: 500;
-            z-index: 1000;
-            opacity: 0;
-            transition: 0.2s;
-            pointer-events: none;
-            backdrop-filter: blur(4px);
-        }
-    </style>
+    @media (max-width: 780px) {
+      .hero-content h2 {
+        font-size: 2.4rem;
+      }
+      .nav-container {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .container {
+        padding: 0 24px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="navbar">
-    <div class="nav-container container">
-        <div class="logo">
-            <h1>Niva <span>Medical Store</span></h1>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#" class="active">होम</a></li>
-            <li><a href="#products">दवाइयाँ</a></li>
-            <li><a href="#categories">सेवाएँ</a></li>
-            <li><a href="#contact">संपर्क करें</a></li>
-            <li><a href="#" id="cartLink"><i class="fas fa-shopping-cart"></i> कार्ट</a></li>
-        </ul>
-        <div class="mobile-menu">
-            <i class="fas fa-bars"></i>
-        </div>
+<header class="header">
+  <div class="container nav-container">
+    <div class="logo-wrapper">
+      <!-- CUSTOM LOGO: modern medical cross + leaf integrated -->
+      <div class="logo-icon" aria-label="Niva Medical Store Logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="16" fill="url(#gradLogo)" />
+          <path d="M16 8V24M10 14H22M10 18H22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M22 10L28 14L22 18" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <path d="M10 10L4 14L10 18" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <defs>
+            <linearGradient id="gradLogo" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0B5E7E"/>
+              <stop offset="1" stop-color="#1C8B6E"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <h1>NIVA</h1>
+        <span>medical store · wellness hub</span>
+      </div>
     </div>
-</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <a href="#" class="btn-outline">Prescription →</a>
+    </div>
+  </div>
+</header>
 
-<!-- Hero Section -->
-<section class="hero">
+<main>
+  <!-- Hero section -->
+  <section class="hero">
     <div class="container hero-grid">
-        <div class="hero-content">
-            <span class="hero-badge"><i class="fas fa-shield-alt"></i> 100% असली दवाइयाँ</span>
-            <h1>आपका स्वास्थ्य, हमारी प्राथमिकता</h1>
-            <p>Niva Medical Store पर ऑर्डर करें — जेनरिक से लेकर प्रीमियम दवाइयाँ, मुफ्त डिलीवरी* और डिस्काउंट के साथ।</p>
-            <div class="hero-buttons">
-                <a href="#products" class="btn btn-primary"><i class="fas fa-prescription-bottle"></i> अभी खरीदें</a>
-                <a href="#contact" class="btn btn-outline"><i class="fas fa-headset"></i> संपर्क करें</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <!-- medical vector style illustration (icon based) -->
-            <img src="https://placehold.co/500x400/eef6f2/0b7b5e?text=Niva+Care+%F0%9F%92%8A" alt="Niva Medical Store" style="background: #dff0ea; object-fit: cover;">
-        </div>
+      <div class="hero-content">
+        <div class="hero-badge">✨ Trusted since 2018</div>
+        <h2>Your health, <br>our priority — <span style="color:#1C8B6E;">Niva Care</span></h2>
+        <p>Authentic medicines, advanced wellness products, and personalized care — delivered with compassion. 24/7 pharmacist support.</p>
+        <a href="#" class="btn-primary">Shop now →</a>
+      </div>
+      <div class="hero-image">
+        <svg width="380" height="320" viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M120 160 L160 120 L200 160 L240 120 L280 160 L320 200 L280 240 L240 200 L200 240 L160 200 L120 240 L80 200 L120 160Z" fill="#DCF2EA" stroke="#1C8B6E" stroke-width="2" stroke-linejoin="round" fill-opacity="0.5"/>
+          <circle cx="200" cy="180" r="48" fill="#0B5E7E" fill-opacity="0.08" stroke="#1C8B6E" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <path d="M170 180H230M200 150V210" stroke="#1C8B6E" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="300" y="260" width="40" height="50" rx="8" fill="#EAF9F2" stroke="#0B5E7E" stroke-width="1.5" />
+          <path d="M310 280H330M310 290H330" stroke="#0B5E7E" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M60 280L80 260L100 280L80 300L60 280Z" fill="#B7E0D2" stroke="#1C8B6E" stroke-width="1.5"/>
+        </svg>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Categories Section -->
-<section class="categories" id="categories">
+  <!-- Features / why choose us -->
+  <section class="features">
     <div class="container">
-        <h2 class="section-title">हमारी सेवाएँ</h2>
-        <div class="section-sub">स्वास्थ्य से जुड़ी हर ज़रूरत, एक छत के नीचे</div>
-        <div class="cat-grid">
-            <div class="cat-card"><i class="fas fa-capsules"></i><h3>जेनरिक दवा</h3><p>सस्ती & असरदार</p></div>
-            <div class="cat-card"><i class="fas fa-syringe"></i><h3>वैक्सीन</h3><p>सुरक्षा टीके</p></div>
-            <div class="cat-card"><i class="fas fa-heartbeat"></i><h3>स्वास्थ्य जाँच</h3><p>डायग्नोस्टिक किट</p></div>
-            <div class="cat-card"><i class="fas fa-truck"></i><h3>फ्री डिलीवरी</h3><p>₹499+ पर</p></div>
-            <div class="cat-card"><i class="fas fa-phone-alt"></i><h3>24x7 सपोर्ट</h3><p>फोन पर परामर्श</p></div>
+      <h2 class="section-title">Why Niva Medical Store?</h2>
+      <p class="section-sub">Experience quality healthcare with convenience and trust — all under one roof.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B5E7E" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Genuine Products</h3>
+          <p>100% authentic medicines & healthcare essentials, sourced directly from licensed manufacturers.</p>
         </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B5E7E" stroke-width="1.6"><path d="M12 6v6l4 2M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          </div>
+          <h3>Same-Day Delivery</h3>
+          <p>Fast & contactless delivery across the city. Order before 2pm for same-day dispatch.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B5E7E" stroke-width="1.6"><path d="M20 12v8H4v-8M12 2v8m0 0-3-3m3 3 3-3"/><path d="M5 12h14"/></svg>
+          </div>
+          <h3>Free Health Check</h3>
+          <p>Free BP & sugar monitoring at our store. Preventive care made easy.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B5E7E" stroke-width="1.6"><path d="M12 8v8m-4-4h8M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/></svg>
+          </div>
+          <h3>Expert Pharmacists</h3>
+          <p>Certified professionals to guide your medication & wellness journey.</p>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Products Section (featured) -->
-<section class="products" id="products">
+  <!-- products showcase -->
+  <section class="products">
     <div class="container">
-        <h2 class="section-title">लोकप्रिय दवाइयाँ</h2>
-        <div class="section-sub">ग्राहकों द्वारा भरोसेमंद प्रोडक्ट्स</div>
-        <div class="product-grid" id="productGrid">
-            <!-- products will be injected via js but also static fallback -->
+      <h2 class="section-title">Essentials & Wellness</h2>
+      <p class="section-sub">Curated selection of trusted brands and daily health must-haves.</p>
+      <div class="product-grid">
+        <div class="product-item">
+          <div class="product-img"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0B5E7E" stroke-width="1.5"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 12h6"/><path d="M12 9v6"/></svg></div>
+          <h4>Vitamins B12+</h4>
+          <p class="price">$14.90</p>
+          <span class="tag">Energy support</span>
         </div>
+        <div class="product-item">
+          <div class="product-img"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1C8B6E" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg></div>
+          <h4>Glucose Monitor</h4>
+          <p class="price">$29.90</p>
+          <span class="tag">Kit + strips</span>
+        </div>
+        <div class="product-item">
+          <div class="product-img"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0B5E7E" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2 2"/></svg></div>
+          <h4>Herbal Immunity</h4>
+          <p class="price">$19.50</p>
+          <span class="tag">Ayurveda blend</span>
+        </div>
+        <div class="product-item">
+          <div class="product-img"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1C8B6E" stroke-width="1.5"><path d="M3 9h18v10H3zM9 9V5h6v4"/></svg></div>
+          <h4>Face Mask (N95)</h4>
+          <p class="price">$7.99</p>
+          <span class="tag">Pack of 10</span>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Offers / Benefits -->
-<section class="offers">
-    <div class="container">
-        <h2 class="section-title">विशेष ऑफ़र</h2>
-        <div class="offer-grid">
-            <div class="offer-item"><i class="fas fa-percent"></i><h3>20% छूट</h3><p>पहले ऑर्डर पर कोड: NIVA20</p></div>
-            <div class="offer-item"><i class="fas fa-flask"></i><h3>फ्री मास्क</h3><p>हर ऑर्डर पर सेनेटाइजर + मास्क</p></div>
-            <div class="offer-item"><i class="fas fa-charging-station"></i><h3>कैश ऑन डिलीवरी</h3><p>कोड से लेकर गाँव तक</p></div>
+  <!-- contact & location -->
+  <section class="contact-section">
+    <div class="container contact-flex">
+      <div class="contact-info">
+        <h3>📞 Need assistance? <br>We're here 24/7</h3>
+        <p>Talk to our pharmacists, refill your prescription, or schedule a free consultation at our store.</p>
+        <div class="contact-detail">
+          <div>📍 42 Green Valley, Wellness Avenue, New York, NY 10001</div>
+          <div>📞 +1 (800) 456-7890  |  ✉️ care@nivamedical.com</div>
+          <div>⏰ Mon–Sat: 8:00 AM – 9:00 PM | Sun: 10 AM – 6 PM</div>
         </div>
+        <a href="#" class="btn-primary" style="margin-top: 28px; display: inline-block;">Book a consultation →</a>
+      </div>
+      <div class="contact-map">
+        <svg width="280" height="180" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="340" height="200" rx="24" fill="#E2F0EA" />
+          <path d="M50 100 L100 70 L150 100 L200 80 L250 110 L290 85" stroke="#0B5E7E" stroke-width="2.5" stroke-dasharray="3 3" />
+          <circle cx="100" cy="70" r="6" fill="#1C8B6E" stroke="white" stroke-width="2" />
+          <circle cx="200" cy="80" r="6" fill="#1C8B6E" stroke="white" stroke-width="2" />
+          <circle cx="150" cy="100" r="8" fill="#0B5E7E" stroke="white" stroke-width="2.5" />
+          <text x="125" y="132" font-size="9" fill="#0B5E7E" font-weight="bold">Niva Medical</text>
+          <rect x="250" y="100" width="60" height="40" rx="8" fill="white" stroke="#1C8B6E" stroke-width="1.5" />
+          <text x="264" y="124" font-size="8" fill="#0a2e3f">📍 main store</text>
+        </svg>
+        <p style="margin-top: 14px; font-size: 0.8rem;">📍 We’re located in the heart of the city — visit us!</p>
+      </div>
     </div>
-</section>
+  </section>
+</main>
 
-<!-- Contact & Newsletter -->
-<section class="contact" id="contact">
-    <div class="container contact-container">
-        <div class="contact-text">
-            <h3><i class="fas fa-envelope-open-text"></i> हेल्थ अपडेट्स पाएँ</h3>
-            <p>नई दवाइयों और ऑफर की जानकारी सबसे पहले पाएँ।</p>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+          <div class="logo-icon" style="width: 40px; height: 40px; background: #1f5e6e;">
+            <svg viewBox="0 0 32 32" fill="none" width="24" height="24"><path d="M16 8V24M10 14H22M10 18H22" stroke="white" stroke-width="2"/></svg>
+          </div>
+          <span style="font-weight: 700; font-size: 1.4rem; color: white;">NIVA</span>
         </div>
-        <div class="contact-form">
-            <input type="email" placeholder="आपका ईमेल" id="newsEmail">
-            <button class="btn btn-primary" id="subscribeBtn">सब्सक्राइब करें</button>
-        </div>
+        <p>Compassionate care, premium quality. Your trusted partner for a healthier tomorrow.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick links</h4>
+        <a href="#">About Niva</a>
+        <a href="#">Shop all</a>
+        <a href="#">Offers & Refills</a>
+        <a href="#">Health blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">FAQs</a>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Contact support</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow us</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+      </div>
     </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-links">
-            <a href="#">होम</a>
-            <a href="#products">दवाइयाँ</a>
-            <a href="#">नियम और शर्तें</a>
-            <a href="#">गोपनीयता नीति</a>
-            <a href="#contact">संपर्क करें</a>
-        </div>
-        <div class="social">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-whatsapp"></i>
-            <i class="fab fa-twitter"></i>
-        </div>
-        <p style="margin-top: 25px;">© 2025 Niva Medical Store - आपके स्वास्थ्य की रक्षा | सभी अधिकार सुरक्षित</p>
-        <p style="font-size: 0.8rem; margin-top: 10px;">⚠️ कृपया डॉक्टर के परामर्श के बाद ही दवा लें।</p>
+    <div class="copyright">
+      © 2026 Niva Medical Store — Advancing wellness with integrity. All rights reserved.
     </div>
+  </div>
 </footer>
-
-<div id="toastMsg" class="toast-msg">✔️ आइटम कार्ट में जोड़ा गया</div>
-
-<script>
-    // Product Data (English & Hindi mixed but easy to understand)
-    const products = [
-        { id: 1, name: "पैरासिटामोल 500mg", price: 28, oldPrice: 45, icon: "fas fa-tablets", stock: true },
-        { id: 2, name: "एज़िथ्रोमाइसिन 250mg", price: 89, oldPrice: 125, icon: "fas fa-pills", stock: true },
-        { id: 3, name: "विटामिन D3 कैप्सूल", price: 199, oldPrice: 350, icon: "fas fa-capsules", stock: true },
-        { id: 4, name: "डायबिटीज़ मॉनिटर किट", price: 899, oldPrice: 1299, icon: "fas fa-heartbeat", stock: true },
-        { id: 5, name: "सिट्रिजिन एंटी-एलर्जी", price: 65, oldPrice: 110, icon: "fas fa-allergies", stock: true },
-        { id: 6, name: "कैल्शियम + विटामिन D", price: 249, oldPrice: 399, icon: "fas fa-bone", stock: true }
-    ];
-
-    let cart = JSON.parse(localStorage.getItem('niva_cart')) || [];
-
-    function saveCart() {
-        localStorage.setItem('niva_cart', JSON.stringify(cart));
-    }
-
-    function showToast(message, isError = false) {
-        const toast = document.getElementById('toastMsg');
-        toast.textContent = message;
-        toast.style.opacity = '1';
-        toast.style.backgroundColor = isError ? '#b34e4e' : '#0b7b5e';
-        setTimeout(() => {
-            toast.style.opacity = '0';
-        }, 2200);
-    }
-
-    function addToCart(productId) {
-        const product = products.find(p => p.id === productId);
-        if (!product) return;
-        const existing = cart.find(item => item.id === productId);
-        if (existing) {
-            existing.quantity += 1;
-            showToast(`➕ ${product.name} की मात्रा बढ़ी (${existing.quantity})`);
-        } else {
-            cart.push({ ...product, quantity: 1 });
-            showToast(`✅ ${product.name} कार्ट में जोड़ा गया`);
-        }
-        saveCart();
-        updateCartIndicator();
-    }
-
-    function updateCartIndicator() {
-        const cartLink = document.getElementById('cartLink');
-        if (cartLink) {
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            cartLink.innerHTML = `<i class="fas fa-shopping-cart"></i> कार्ट (${totalItems})`;
-        }
-    }
-
-    function renderProducts() {
-        const grid = document.getElementById('productGrid');
-        if (!grid) return;
-        grid.innerHTML = '';
-        products.forEach(prod => {
-            const card = document.createElement('div');
-            card.className = 'product-card';
-            card.innerHTML = `
-                <div class="product-img"><i class="${prod.icon}"></i></div>
-                <h4>${prod.name}</h4>
-                <div class="price">₹${prod.price} <span class="old-price">₹${prod.oldPrice}</span></div>
-                <button data-id="${prod.id}">कार्ट में डालें <i class="fas fa-arrow-right"></i></button>
-            `;
-            grid.appendChild(card);
-        });
-        document.querySelectorAll('.product-card button').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const id = parseInt(btn.getAttribute('data-id'));
-                addToCart(id);
-            });
-        });
-    }
-
-    // Mobile menu toggle (basic)
-    const mobileBtn = document.querySelector('.mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
-    if (mobileBtn && navLinks) {
-        mobileBtn.addEventListener('click', () => {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '70px';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.backgroundColor = 'white';
-                navLinks.style.padding = '24px';
-                navLinks.style.gap = '20px';
-                navLinks.style.boxShadow = '0 12px 20px rgba(0,0,0,0.05)';
-                navLinks.style.zIndex = '99';
-            }
-        });
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 900 && navLinks.style.display === 'flex') {
-                navLinks.style.display = '';
-                navLinks.style.position = '';
-                navLinks.style.flexDirection = '';
-                navLinks.style.width = '';
-                navLinks.style.backgroundColor = '';
-                navLinks.style.padding = '';
-            }
-            if (window.innerWidth > 900 && navLinks.style.display === 'none') {
-                navLinks.style.display = '';
-            }
-        });
-    }
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === "#" || href === "") return;
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                // close mobile menu if open
-                if (window.innerWidth <= 900 && navLinks && navLinks.style.display === 'flex') {
-                    navLinks.style.display = 'none';
-                }
-            }
-        });
-    });
-
-    // Newsletter subscribe
-    const subBtn = document.getElementById('subscribeBtn');
-    if (subBtn) {
-        subBtn.addEventListener('click', () => {
-            const emailInput = document.getElementById('newsEmail');
-            const email = emailInput.value.trim();
-            if (!email || !email.includes('@')) {
-                showToast('कृपया सही ईमेल दर्ज करें', true);
-                return;
-            }
-            showToast(`🎉 धन्यवाद! ${email} पर अपडेट भेजे जाएंगे।`);
-            emailInput.value = '';
-        });
-    }
-
-    // Cart link alert (simple demo)
-    const cartLinkEl = document.getElementById('cartLink');
-    if (cartLinkEl) {
-        cartLinkEl.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (cart.length === 0) {
-                showToast('🛒 आपका कार्ट खाली है, दवाइयाँ जोड़ें!');
-            } else {
-                let msg = '🛍️ कार्ट सामान:\n';
-                cart.forEach(item => {
-                    msg += `${item.name} x ${item.quantity} = ₹${item.price * item.quantity}\n`;
-                });
-                msg += `\nकुल: ₹${cart.reduce((sum, i) => sum + (i.price * i.quantity), 0)}`;
-                alert(msg + '\n\n📞 ऑर्डर के लिए संपर्क करें: +91-9876543210');
-            }
-        });
-    }
-
-    // init
-    renderProducts();
-    updateCartIndicator();
-    // optional: extra category hover / active style
-    const navActive = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        const sections = document.querySelectorAll('section, .hero, .contact');
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            if (pageYOffset >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-        navActive.forEach(link => {
-            link.classList.remove('active');
-            const href = link.getAttribute('href').substring(1);
-            if (href === current || (current === null && link.getAttribute('href') === '#')) {
-                link.classList.add('active');
-            }
-        });
-    });
-</script>
 </body>
 </html>
